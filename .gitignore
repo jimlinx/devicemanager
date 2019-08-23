@@ -1,0 +1,7 @@
+/public/storage
+/.idea
+/.idea/workspace.xml
+/node_modules
+/vendor
+/bootstrap/compiled.php
+
