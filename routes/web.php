@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/device', 'DeviceController@index');
+Route::get('/devicetype', 'DevicetypeController@index');
+Route::put('/devicetype', 'DevicetypeController@store');
