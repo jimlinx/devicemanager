@@ -24,29 +24,35 @@
                         @method('PUT')
 
                         <div class="card">
-                            <div class="card-header">Device Types</div>
+                            <div class="card-header">Locations</div>
 
                             <div class="card-body">
                                 <table class="table table-responsive table-striped" id="myTable">
                                     <tr class="text-black">
                                         <th>ID</th>
                                         <th>Name</th>
+                                        <th>Shorthand</th>
                                         <th><input type="button"
                                                    style="line-height: 5px; margin: 0;"
                                                    class="btn btn-success btn_addrow"
                                                    value="ADD ROW"/></th>
                                     </tr>
-                                    @foreach($deviceTypes as $deviceType)
-                                        <tr class="text-black-50" id="{{$deviceType['id'] . '_row'}}">
-                                            <td>{{$deviceType->id}}</td>
-                                            <td><input name="{{$deviceType->id . '_name'}}"
-                                                       id="{{$deviceType->id . '_name'}}"
-                                                       value="{{$deviceType->name}}"
-                                                       size="45">
+                                    @foreach($locations as $location)
+                                        <tr class="text-black-50" id="{{$location['id'] . '_row'}}">
+                                            <td>{{$location->id}}</td>
+                                            <td><input name="{{$location->id . '_name'}}"
+                                                       id="{{$location->id . '_name'}}"
+                                                       value="{{$location->name}}"
+                                                       size="20">
+                                            </td>
+                                            <td><input name="{{$location->id . '_shorthand'}}"
+                                                       id="{{$location->id . '_shorthand'}}"
+                                                       value="{{$location->shorthand}}"
+                                                       size="10">
                                             </td>
                                             <td>
                                                 <button type="button"
-                                                        id="{{$deviceType->id}}"
+                                                        id="{{$location->id}}"
                                                         style="line-height: 5px; margin: 0;"
                                                         class="btn btn-danger btn_remove">X
                                                 </button>
@@ -82,9 +88,9 @@
 
 
         $(document).on('click', '.btn_remove', function () {
-            mscConfirm("Delete Device Type?", "Delete will take effect immediately!", function () {
+            mscConfirm("Delete Location?", "Delete will take effect immediately!", function () {
                 let button_id = $(this).attr("id");
-                let url = '/api/devicetype/' + button_id;
+                let url = '/api/location/' + button_id;
                 let request = new XMLHttpRequest();
                 request.open('DELETE', url);
                 request.send();
@@ -113,10 +119,12 @@
             let cell1 = row.insertCell(0);
             let cell2 = row.insertCell(1);
             let cell3 = row.insertCell(2);
+            let cell4 = row.insertCell(3);
 
             cell1.innerHTML = id;
-            cell2.innerHTML = "<input name='" + id + "_name' id='" + id + "_name' size='45'>";
-            cell3.innerHTML = "<button type='button' id='" + id + "' class='btn btn-danger btn_removeNew' style='line-height: 5px; margin: 0;'>X</button>";
+            cell2.innerHTML = "<input name='" + id + "_name' id='" + id + "_name' size='20'>";
+            cell3.innerHTML = "<input name='" + id + "_shorthand' id='" + id + "_shorthand' size='10'>";
+            cell4.innerHTML = "<button type='button' id='" + id + "' class='btn btn-danger btn_removeNew' style='line-height: 5px; margin: 0;'>X</button>";
         });
     </script>
 @endsection

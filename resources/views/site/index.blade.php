@@ -24,7 +24,7 @@
                         @method('PUT')
 
                         <div class="card">
-                            <div class="card-header">Device Types</div>
+                            <div class="card-header">Sites</div>
 
                             <div class="card-body">
                                 <table class="table table-responsive table-striped" id="myTable">
@@ -36,17 +36,17 @@
                                                    class="btn btn-success btn_addrow"
                                                    value="ADD ROW"/></th>
                                     </tr>
-                                    @foreach($deviceTypes as $deviceType)
-                                        <tr class="text-black-50" id="{{$deviceType['id'] . '_row'}}">
-                                            <td>{{$deviceType->id}}</td>
-                                            <td><input name="{{$deviceType->id . '_name'}}"
-                                                       id="{{$deviceType->id . '_name'}}"
-                                                       value="{{$deviceType->name}}"
+                                    @foreach($sites as $site)
+                                        <tr class="text-black-50" id="{{$site['id'] . '_row'}}">
+                                            <td>{{$site->id}}</td>
+                                            <td><input name="{{$site->id . '_name'}}"
+                                                       id="{{$site->id . '_name'}}"
+                                                       value="{{$site->name}}"
                                                        size="45">
                                             </td>
                                             <td>
                                                 <button type="button"
-                                                        id="{{$deviceType->id}}"
+                                                        id="{{$site->id}}"
                                                         style="line-height: 5px; margin: 0;"
                                                         class="btn btn-danger btn_remove">X
                                                 </button>
@@ -82,9 +82,9 @@
 
 
         $(document).on('click', '.btn_remove', function () {
-            mscConfirm("Delete Device Type?", "Delete will take effect immediately!", function () {
+            mscConfirm("Delete Site?", "Delete will take effect immediately!", function () {
                 let button_id = $(this).attr("id");
-                let url = '/api/devicetype/' + button_id;
+                let url = '/api/site/' + button_id;
                 let request = new XMLHttpRequest();
                 request.open('DELETE', url);
                 request.send();

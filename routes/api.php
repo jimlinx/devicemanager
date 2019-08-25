@@ -14,6 +14,8 @@ use Illuminate\Http\Request;
 */
 
 Route::delete('devicetype/{id}', 'API\DeviceTypeController@delete');
+Route::delete('location/{id}', 'API\LocationController@delete');
+Route::delete('site/{id}', 'API\SiteController@delete');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

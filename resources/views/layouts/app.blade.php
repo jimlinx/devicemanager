@@ -52,10 +52,15 @@
                                 </li>
                             @endif
                         @else
+                            <li><a class="nav-link" href="/device">Device</a></li>
+                            <li><a class="nav-link" href="/devicetype">Device Type</a></li>
+                            <li><a class="nav-link" href="/location">Location</a></li>
+                            <li><a class="nav-link" href="/site">Site</a></li>
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    Device <span class="caret"></span>
+                                    Menu<span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

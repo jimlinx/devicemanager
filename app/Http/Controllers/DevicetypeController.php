@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\device;
 use App\devicetype;
+use App\Logic\Utility;
 use Illuminate\Http\Request;
 
 class DevicetypeController extends Controller
@@ -26,8 +27,7 @@ class DevicetypeController extends Controller
         $data = request()->all();
         unset($data['_token']);
         unset($data['_method']);
-
-        $idArray = $this->parseIds($data);
+        $idArray = Utility::parseIds($data);
 
         foreach($idArray as $key => $value) {
             $name = $data[$key . '_name'];
@@ -47,15 +47,4 @@ class DevicetypeController extends Controller
         return redirect('/devicetype');
     }
 
-
-    private function parseIds($data)
-    {
-        $idArray  = Array();
-        foreach ($data as $key => $value) {
-            $id = strtok($key, '_');
-            error_log('###[parseIds]: ID: ' . $id);
-            $idArray[$id] = true;
-        }
-        return $idArray;
-    }
 }

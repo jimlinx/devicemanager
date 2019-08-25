@@ -20,5 +20,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/device', 'DeviceController@index');
+
 Route::get('/devicetype', 'DevicetypeController@index');
 Route::put('/devicetype', 'DevicetypeController@store');
+
+Route::get('/location', 'LocationController@index');
+Route::put('/location', 'LocationController@store');
+
+Route::get('/site', 'SiteController@index');
+Route::put('/site', 'SiteController@store');
