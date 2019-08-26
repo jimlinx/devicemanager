@@ -25,7 +25,7 @@
                         @method('POST')
 
                         <div class="card">
-                            <div class="card-header">Add New Entry</div>
+                            <div class="card-header">Pin Layouts: Add New Entry</div>
 
                             <div class="card-body">
                                 <table class="table table-responsive table-striped" id="myTable">
@@ -57,7 +57,7 @@
                                     </tr>
                                 </table>
                             </div>
-                            <button type="submit" class="btn btn-primary action">Save</button>
+                            <button type="submit" class="btn btn-primary action">Add</button>
                         </div>
                     </form>
 

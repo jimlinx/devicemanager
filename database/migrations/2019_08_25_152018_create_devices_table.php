@@ -22,9 +22,9 @@ class CreateDevicesTable extends Migration
             $table->unsignedBigInteger('siteid')->nullable();
             $table->unsignedBigInteger('locationid')->nullable();
             $table->unsignedBigInteger('masterid')->nullable();
-            $table->unsignedBigInteger('status')->nullable();
             $table->unsignedBigInteger('devicetypeid')->nullable();
 
+            $table->unsignedBigInteger('status')->nullable();
             $table->string('serial', 50)->nullable();
             $table->integer('mqttserver')->nullable();
             $table->string('mqttuser', 45)->nullable();

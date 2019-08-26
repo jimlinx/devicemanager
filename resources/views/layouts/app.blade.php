@@ -58,6 +58,7 @@
                             <li><a class="nav-link" href="/site">Site</a></li>
                             <li><a class="nav-link" href="/mqttserver">MQTT Server</a></li>
                             <li><a class="nav-link" href="/pinlayout">Pin Layout</a></li>
+                            <li><a class="nav-link" href="/sensortype">Sensor Type</a></li>
 
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"

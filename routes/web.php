@@ -20,6 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/device', 'DeviceController@index');
+Route::put('/device', 'DeviceController@store');
+Route::post('/device', 'DeviceController@storeOne');
 
 Route::get('/devicetype', 'DevicetypeController@index');
 Route::put('/devicetype', 'DevicetypeController@store');
@@ -33,6 +35,9 @@ Route::put('/mqttserver', 'MqttserverController@store');
 Route::get('/pinlayout', 'PinlayoutController@index');
 Route::put('/pinlayout', 'PinlayoutController@store');
 Route::post('/pinlayout', 'PinlayoutController@storeOne');
+
+Route::get('/sensortype', 'SensortypeController@index');
+Route::put('/sensortype', 'SensortypeController@store');
 
 Route::get('/site', 'SiteController@index');
 Route::put('/site', 'SiteController@store');
