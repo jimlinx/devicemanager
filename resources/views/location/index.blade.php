@@ -88,8 +88,8 @@
 
 
         $(document).on('click', '.btn_remove', function () {
+            let button_id = $(this).attr("id");
             mscConfirm("Delete Location?", "Delete will take effect immediately!", function () {
-                let button_id = $(this).attr("id");
                 let url = '/api/location/' + button_id;
                 let request = new XMLHttpRequest();
                 request.open('DELETE', url);

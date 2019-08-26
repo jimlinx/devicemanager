@@ -82,8 +82,8 @@
 
 
         $(document).on('click', '.btn_remove', function () {
+            let button_id = $(this).attr("id");
             mscConfirm("Delete Site?", "Delete will take effect immediately!", function () {
-                let button_id = $(this).attr("id");
                 let url = '/api/site/' + button_id;
                 let request = new XMLHttpRequest();
                 request.open('DELETE', url);

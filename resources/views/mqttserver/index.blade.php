@@ -17,36 +17,48 @@
     <div id="main">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-7">
+                <div class="col-md-9">
 
-                    <form action="/devicetype" method="post">
+                    <form action="/mqttserver" method="post">
                         @csrf
                         @method('PUT')
 
                         <div class="card">
-                            <div class="card-header">Device Types</div>
+                            <div class="card-header">MQTT Servers</div>
 
                             <div class="card-body">
                                 <table class="table table-responsive table-striped" id="myTable">
                                     <tr class="text-black">
                                         <th>ID</th>
+                                        <th>IP</th>
+                                        <th>PORT</th>
                                         <th>Name</th>
                                         <th><input type="button"
                                                    style="line-height: 5px; margin: 0;"
                                                    class="btn btn-success btn_addrow"
                                                    value="ADD ROW"/></th>
                                     </tr>
-                                    @foreach($deviceTypes as $deviceType)
-                                        <tr class="text-black-50" id="{{$deviceType['id'] . '_row'}}">
-                                            <td>{{$deviceType->id}}</td>
-                                            <td><input name="{{$deviceType->id . '_name'}}"
-                                                       id="{{$deviceType->id . '_name'}}"
-                                                       value="{{$deviceType->name}}"
+                                    @foreach($mqttservers as $mqttserver)
+                                        <tr class="text-black-50" id="{{$mqttserver['id'] . '_row'}}">
+                                            <td>{{$mqttserver->id}}</td>
+                                            <td><input name="{{$mqttserver->id . '_ip'}}"
+                                                       id="{{$mqttserver->id . '_ip'}}"
+                                                       value="{{$mqttserver->ip}}"
+                                                       size="16">
+                                            </td>
+                                            <td><input name="{{$mqttserver->id . '_port'}}"
+                                                       id="{{$mqttserver->id . '_port'}}"
+                                                       value="{{$mqttserver->port}}"
+                                                       size="5">
+                                            </td>
+                                            <td><input name="{{$mqttserver->id . '_name'}}"
+                                                       id="{{$mqttserver->id . '_name'}}"
+                                                       value="{{$mqttserver->name}}"
                                                        size="45">
                                             </td>
                                             <td>
                                                 <button type="button"
-                                                        id="{{$deviceType->id}}"
+                                                        id="{{$mqttserver->id}}"
                                                         style="line-height: 5px; margin: 0;"
                                                         class="btn btn-danger btn_remove">X
                                                 </button>
@@ -83,8 +95,8 @@
 
         $(document).on('click', '.btn_remove', function () {
             let button_id = $(this).attr("id");
-            mscConfirm("Delete Device Type?", "Delete will take effect immediately!", function () {
-                let url = '/api/devicetype/' + button_id;
+            mscConfirm("Delete Site?", "Delete will take effect immediately!", function () {
+                let url = '/api/mqttserver/' + button_id;
                 let request = new XMLHttpRequest();
                 request.open('DELETE', url);
                 request.send();
@@ -113,10 +125,14 @@
             let cell1 = row.insertCell(0);
             let cell2 = row.insertCell(1);
             let cell3 = row.insertCell(2);
+            let cell4 = row.insertCell(3);
+            let cell5 = row.insertCell(4);
 
             cell1.innerHTML = id;
-            cell2.innerHTML = "<input name='" + id + "_name' id='" + id + "_name' size='45'>";
-            cell3.innerHTML = "<button type='button' id='" + id + "' class='btn btn-danger btn_removeNew' style='line-height: 5px; margin: 0;'>X</button>";
+            cell2.innerHTML = "<input name='" + id + "_ip' id='" + id + "_ip' size='16'>";
+            cell3.innerHTML = "<input name='" + id + "_port' id='" + id + "_port' size='5'>";
+            cell4.innerHTML = "<input name='" + id + "_name' id='" + id + "_name' size='45'>";
+            cell5.innerHTML = "<button type='button' id='" + id + "' class='btn btn-danger btn_removeNew' style='line-height: 5px; margin: 0;'>X</button>";
         });
     </script>
 @endsection

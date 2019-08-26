@@ -27,5 +27,12 @@ Route::put('/devicetype', 'DevicetypeController@store');
 Route::get('/location', 'LocationController@index');
 Route::put('/location', 'LocationController@store');
 
+Route::get('/mqttserver', 'MqttserverController@index');
+Route::put('/mqttserver', 'MqttserverController@store');
+
+Route::get('/pinlayout', 'PinlayoutController@index');
+Route::put('/pinlayout', 'PinlayoutController@store');
+Route::post('/pinlayout', 'PinlayoutController@storeOne');
+
 Route::get('/site', 'SiteController@index');
 Route::put('/site', 'SiteController@store');
