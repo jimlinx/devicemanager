@@ -36,8 +36,16 @@ Route::get('/pinlayout', 'PinlayoutController@index');
 Route::put('/pinlayout', 'PinlayoutController@store');
 Route::post('/pinlayout', 'PinlayoutController@storeOne');
 
+Route::get('/sensor', 'SensorController@index');
+Route::put('/sensor', 'SensorController@store');
+Route::post('/sensor', 'SensorController@storeOne');
+
 Route::get('/sensortype', 'SensortypeController@index');
 Route::put('/sensortype', 'SensortypeController@store');
+
+Route::get('/subscription', 'SubscriptionController@index');
+Route::put('/subscription', 'SubscriptionController@store');
+Route::post('/subscription', 'SubscriptionController@storeOne');
 
 Route::get('/site', 'SiteController@index');
 Route::put('/site', 'SiteController@store');

@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
         $this->seedSensortypes();
         $this->seedDevices();
         $this->seedSubscriptions();
+        $this->seedSensors();
     }
 
 
@@ -613,4 +614,157 @@ class DatabaseSeeder extends Seeder
         subscription::create(['deviceid' => 4, 'topic' => 'siren', 'displayname' => '']);
     }
 
+
+    public function seedSensors()
+    {
+        sensor::create([
+            'deviceid' => 2, 'sensortype' => 10, 'locationid' => 5, 'pin' => 1,
+            'channel1' => null, 'channel2' => null, 'association' => null,
+            'status' => 1, 'name' => '2nd floor motion', 'ondelay' => null, 'offdelay' => null
+        ]);
+        sensor::create([
+            'deviceid' => 2, 'sensortype' => 10, 'locationid' => 2, 'pin' => 2,
+            'channel1' => null, 'channel2' => null, 'association' => null,
+            'status' => 1, 'name' => 'master bedroom motion', 'ondelay' => null, 'offdelay' => null
+        ]);
+        sensor::create([
+            'deviceid' => 2, 'sensortype' => 10, 'locationid' => 10, 'pin' => 3,
+            'channel1' => null, 'channel2' => null, 'association' => 0,
+            'status' => 1, 'name' => 'ground hallway motion', 'ondelay' => null, 'offdelay' => null
+        ]);
+        sensor::create([
+            'deviceid' => 2, 'sensortype' => 11, 'locationid' => 7, 'pin' => 4,
+            'channel1' => null, 'channel2' => null, 'association' => 0,
+            'status' => 1, 'name' => 'front door reed', 'ondelay' => null, 'offdelay' => null
+        ]);
+        sensor::create([
+            'deviceid' => 2, 'sensortype' => 11, 'locationid' => 2, 'pin' => 5,
+            'channel1' => null, 'channel2' => null, 'association' => null,
+            'status' => 1, 'name' => 'master bedroom reed', 'ondelay' => null, 'offdelay' => null
+        ]);
+        sensor::create([
+            'deviceid' => 2, 'sensortype' => 11, 'locationid' => 1, 'pin' => 6,
+            'channel1' => null, 'channel2' => null, 'association' => null,
+            'status' => 1, 'name' => 'garage reed', 'ondelay' => null, 'offdelay' => null
+        ]);
+        sensor::create([
+            'deviceid' => 2, 'sensortype' => 11, 'locationid' => 6, 'pin' => 7,
+            'channel1' => null, 'channel2' => null, 'association' => null,
+            'status' => 1, 'name' => 'ground toilet reed', 'ondelay' => null, 'offdelay' => null
+        ]);
+        sensor::create([
+            'deviceid' => 2, 'sensortype' => 11, 'locationid' => 8, 'pin' => 8,
+            'channel1' => null, 'channel2' => null, 'association' => null,
+            'status' => 1, 'name' => 'upstairs living room reed', 'ondelay' => null, 'offdelay' => null
+        ]);
+        sensor::create([
+            'deviceid' => 2, 'sensortype' => 19, 'locationid' => 5, 'pin' => 0,
+            'channel1' => null, 'channel2' => null, 'association' => 0,
+            'status' => 1, 'name' => 'LED', 'ondelay' => null, 'offdelay' => 0.0
+        ]);
+
+        sensor::create([
+            'deviceid' => 2, 'sensortype' => 20, 'locationid' => 5, 'pin' => 0,
+            'channel1' => null, 'channel2' => null, 'association' => null,
+            'status' => 0, 'name' => 'temp', 'ondelay' => null, 'offdelay' => null
+        ]);
+        sensor::create([
+            'deviceid' => 2, 'sensortype' => 21, 'locationid' => 5, 'pin' => 0,
+            'channel1' => null, 'channel2' => null, 'association' => null,
+            'status' => 0, 'name' => 'humidity', 'ondelay' => null, 'offdelay' => null
+        ]);
+        sensor::create([
+            'deviceid' => 2, 'sensortype' => 3, 'locationid' => 5, 'pin' => 0,
+            'channel1' => null, 'channel2' => null, 'association' => null,
+            'status' => 1, 'name' => 'arm', 'ondelay' => null, 'offdelay' => null
+        ]);
+        sensor::create([
+            'deviceid' => 2, 'sensortype' => 4, 'locationid' => 5, 'pin' => 0,
+            'channel1' => null, 'channel2' => null, 'association' => null,
+            'status' => 1, 'name' => 'siren', 'ondelay' => null, 'offdelay' => null
+        ]);
+        sensor::create([
+            'deviceid' => 2, 'sensortype' => 13, 'locationid' => 5, 'pin' => 10,
+            'channel1' => null, 'channel2' => null, 'association' => 1,
+            'status' => 1, 'name' => 'int siren', 'ondelay' => null, 'offdelay' => 15.0
+        ]);
+        sensor::create([
+            'deviceid' => 2, 'sensortype' => 13, 'locationid' => 5, 'pin' => 11,
+            'channel1' => null, 'channel2' => null, 'association' => null,
+            'status' => 1, 'name' => 'ext siren', 'ondelay' => null, 'offdelay' => null
+        ]);
+
+        sensor::create([
+            'deviceid' => 3, 'sensortype' => 24, 'locationid' => 1, 'pin' => 1,
+            'channel1' => null, 'channel2' => null, 'association' => 0,
+            'status' => 1, 'name' => 'garage door', 'ondelay' => null, 'offdelay' => 1.0
+        ]);
+        sensor::create([
+            'deviceid' => 3, 'sensortype' => 11, 'locationid' => 1, 'pin' => 2,
+            'channel1' => null, 'channel2' => null, 'association' => null,
+            'status' => 1, 'name' => 'door reed', 'ondelay' => null, 'offdelay' => null
+        ]);
+        sensor::create([
+            'deviceid' => 3, 'sensortype' => 16, 'locationid' => 1, 'pin' => 3,
+            'channel1' => null, 'channel2' => null, 'association' => null,
+            'status' => 1, 'name' => 'garage motion', 'ondelay' => null, 'offdelay' => null
+        ]);
+        sensor::create([
+            'deviceid' => 3, 'sensortype' => 22, 'locationid' => 1, 'pin' => 4,
+            'channel1' => null, 'channel2' => null, 'association' => 17,
+            'status' => 1, 'name' => 'garage light', 'ondelay' => null, 'offdelay' => 300.0
+        ]);
+
+        sensor::create([
+            'deviceid' => 1, 'sensortype' => 22, 'locationid' => 1, 'pin' => 5,
+            'channel1' => null, 'channel2' => null, 'association' => null,
+            'status' => 0, 'name' => 'test relay test', 'ondelay' => null, 'offdelay' => null
+        ]);
+        sensor::create([
+            'deviceid' => 1, 'sensortype' => 11, 'locationid' => 13, 'pin' => 9,
+            'channel1' => null, 'channel2' => null, 'association' => null,
+            'status' => 0, 'name' => 'test relay test', 'ondelay' => null, 'offdelay' => null
+        ]);
+        sensor::create([
+            'deviceid' => 1, 'sensortype' => 25, 'locationid' => 1, 'pin' => 1,
+            'channel1' => null, 'channel2' => null, 'association' => 24,
+            'status' => 0, 'name' => 'test relay 1', 'ondelay' => null, 'offdelay' => 5.0
+        ]);
+        sensor::create([
+            'deviceid' => 1, 'sensortype' => 26, 'locationid' => 1, 'pin' => 2,
+            'channel1' => null, 'channel2' => null, 'association' => 0,
+            'status' => 0, 'name' => 'test momrelay 2', 'ondelay' => null, 'offdelay' => 0.5
+        ]);
+        sensor::create([
+            'deviceid' => 1, 'sensortype' => 11, 'locationid' => 1, 'pin' => 3,
+            'channel1' => null, 'channel2' => null, 'association' => null,
+            'status' => 0, 'name' => 'test door reed', 'ondelay' => null, 'offdelay' => null
+        ]);
+        sensor::create([
+            'deviceid' => 1, 'sensortype' => 16, 'locationid' => 1, 'pin' => 4,
+            'channel1' => null, 'channel2' => null, 'association' => null,
+            'status' => 0, 'name' => 'test microwave', 'ondelay' => null, 'offdelay' => null
+        ]);
+
+        sensor::create([
+            'deviceid' => 3, 'sensortype' => 22, 'locationid' => 1, 'pin' => 6,
+            'channel1' => null, 'channel2' => null, 'association' => 17,
+            'status' => 1, 'name' => 'garage light', 'ondelay' => null, 'offdelay' => 300.0
+        ]);
+        sensor::create([
+            'deviceid' => 4, 'sensortype' => 10, 'locationid' => 14, 'pin' => 1,
+            'channel1' => null, 'channel2' => null, 'association' => null,
+            'status' => 1, 'name' => 'garage motion', 'ondelay' => null, 'offdelay' => null
+        ]);
+        sensor::create([
+            'deviceid' => 4, 'sensortype' => 11, 'locationid' => 14, 'pin' => 2,
+            'channel1' => null, 'channel2' => null, 'association' => null,
+            'status' => 1, 'name' => 'garage door', 'ondelay' => null, 'offdelay' => null
+        ]);
+        sensor::create([
+            'deviceid' => 4, 'sensortype' => 24, 'locationid' => 14, 'pin' => 3,
+            'channel1' => null, 'channel2' => null, 'association' => null,
+            'status' => 1, 'name' => 'garage motor', 'ondelay' => null, 'offdelay' => 1.0
+        ]);
+    }
 }

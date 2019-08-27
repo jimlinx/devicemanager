@@ -59,6 +59,8 @@
                             <li><a class="nav-link" href="/mqttserver">MQTT Server</a></li>
                             <li><a class="nav-link" href="/pinlayout">Pin Layout</a></li>
                             <li><a class="nav-link" href="/sensortype">Sensor Type</a></li>
+                            <li><a class="nav-link" href="/sensor">Sensor</a></li>
+                            <li><a class="nav-link" href="/subscription">Subscription</a></li>
 
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
@@ -69,6 +71,13 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="/device">Device</a>
                                     <a class="dropdown-item" href="/devicetype">Device Type</a>
+                                    <a class="dropdown-item" href="/location">Location</a>
+                                    <a class="dropdown-item" href="/site">Site</a>
+                                    <a class="dropdown-item" href="/mqttserver">MQTT Server</a>
+                                    <a class="dropdown-item" href="/pinlayout">Pin Layout</a>
+                                    <a class="dropdown-item" href="/sensortype">Sensor Type</a>
+                                    <a class="dropdown-item" href="/sensor">Sensor</a>
+                                    <a class="dropdown-item" href="/subscription">Subscriptions</a>
                                 </div>
                             </li>
 

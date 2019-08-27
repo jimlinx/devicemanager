@@ -37,6 +37,11 @@ class DeviceController extends Controller
         $idArray = Utility::parseIds($data);
 
         foreach ($idArray as $key => $value) {
+            if(!isset($data[$key . '_devicetypeid']))
+                $data[$key . '_devicetypeid'] = null;
+            if(!isset($data[$key . '_masterid']))
+                $data[$key . '_masterid'] = null;
+
             $siteid = $data[$key . '_siteid'];
             $locationid = $data[$key . '_locationid'];
             $masterid = $data[$key . '_masterid'];
@@ -105,6 +110,9 @@ class DeviceController extends Controller
     public function storeOne()
     {
         $data = request()->all();
+
+        if(!isset($data['devicetypeid']))
+            $data['devicetypeid'] = null;
 
         device::create([
             'siteid' => $data['siteid'],
