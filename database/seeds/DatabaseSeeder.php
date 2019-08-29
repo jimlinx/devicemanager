@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
         $this->seedDevices();
         $this->seedSubscriptions();
         $this->seedSensors();
+        
     }
 
 
