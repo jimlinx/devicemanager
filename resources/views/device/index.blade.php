@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="loading" style="display:none;" class="">
-        <div style="width: 100px; height: 100px; position: absolute; top:0; bottom: 0; left: 0; right: 0; margin: auto;">
+        <div style="width: 100px; height: 100px; position: absolute; top:0; bottom: 0; left: 0; right: 0; margin: auto">
             <div class="row justify-content-center">
                 <div class="text-white">LOADING</div>
             </div>
@@ -15,8 +15,8 @@
     <input id="tempCount" type="hidden" value="0">
 
     <div id="main">
-        <div class="container">
-            <div class="row justify-content-center">
+        <div class="container" style="width:3000px; margin-left: 1; margin-right: 1; font-size: 8pt">
+            <div class="row justify-content-center" style="width: auto">
                 <div class="col-md-12">
 
 
@@ -43,16 +43,18 @@
                                         <th>Alarm Time</th>
                                         <th>Memo</th>
                                         <th>IP</th>
-                                        <th>Logon Time</th>
                                         <th>Host Name</th>
+                                        <th>Logon Time</th>
                                         <th>Register Time</th>
                                     </tr>
 
-                                    <tr class="text-black-50">
+                                    <tr class="text-black-50" >
                                         <td>
                                             <select name="{{'siteid'}}"
                                                     id="{{'siteid'}}"
-                                                    class="form-control">
+                                                    class="form-control"
+                                                    size="5"
+                                                    style="width:auto; font-size: 8pt">
                                                 @foreach($sites as $site)
                                                     <option value="{{$site['id']}}">
                                                         {{$site['name']}}
@@ -60,11 +62,13 @@
                                                 @endforeach
                                             </select>
                                         </td>
-
+                                        
                                         <td>
                                             <select name="{{'locationid'}}"
                                                     id="{{'locationid'}}"
-                                                    class="form-control">
+                                                    class="form-control"
+                                                    size="5"
+                                                    style="width:auto; font-size: 8pt">
                                                 @foreach($locations as $location)
                                                     <option value="{{$location['id']}}">
                                                         {{$location['name']}}
@@ -76,10 +80,12 @@
                                         <td>
                                             <select name="{{'masterid'}}"
                                                     id="{{'masterid'}}"
-                                                    class="form-control">
+                                                    class="form-control"
+                                                    size="5"
+                                                    style="width:auto; font-size: 8pt">
                                                 @foreach($devices as $device)
                                                     <option value="{{$device['id']}}">
-                                                        {{$device['id']}}
+                                                        {{$device['name']}}
                                                     </option>
                                                 @endforeach
                                             </select>
@@ -88,7 +94,9 @@
                                         <td>
                                             <select name="{{'devicetypeid'}}"
                                                     id="{{'devicetypeid'}}"
-                                                    class="form-control">
+                                                    class="form-control"
+                                                    size="5"
+                                                    style="width:auto; font-size: 8pt">
                                                 @foreach($devicetypes as $devicetype)
                                                     <option value="{{$devicetype['id']}}">
                                                         {{$devicetype['name']}}
@@ -112,7 +120,9 @@
                                         <td>
                                             <select name="{{'mqttserver'}}"
                                                     id="{{'mqttserver'}}"
-                                                    class="form-control">
+                                                    class="form-control"
+                                                    size="5"
+                                                    style="width:auto; font-size: 8pt">
                                                 @foreach($mqttservers as $mqttserver)
                                                     <option value="{{$mqttserver['id']}}">
                                                         {{$mqttserver['name']}}
@@ -157,24 +167,22 @@
                                                    size="16">
                                         </td>
 
-                                        <td><input name="{{'logontime'}}"
-                                                   id="{{'logontime'}}"
-                                                   type="date"
-                                                   value=""
-                                                   size="5">
-                                        </td>
-
                                         <td><input name="{{'hostname'}}"
                                                    id="{{'hostname'}}"
                                                    value=""
                                                    size="10">
                                         </td>
 
+                                        <td><input name="{{'logontime'}}"
+                                                   id="{{'logontime'}}"
+                                                   value=""
+                                                   size="15">
+                                        </td>
+
                                         <td><input name="{{'registertime'}}"
                                                    id="{{'registertime'}}"
-                                                   type="date"
                                                    value=""
-                                                   size="5">
+                                                   size="15">
                                         </td>
 
                                     </tr>
@@ -210,8 +218,8 @@
                                         <th>Alarm Time</th>
                                         <th>Memo</th>
                                         <th>IP</th>
-                                        <th>Logon Time</th>
                                         <th>Host Name</th>
+                                        <th>Logon Time</th>
                                         <th>Register Time</th>
                                         <th></th>
                                     </tr>
@@ -221,7 +229,9 @@
                                             <td>
                                                 <select name="{{$device['id'] . '_siteid'}}"
                                                         id="{{$device['id'] . '_siteid'}}"
-                                                        class="form-control">
+                                                        class="form-control"
+                                                        size="1"
+                                                        style="width:auto; font-size: 8pt">
                                                     @foreach($sites as $site)
                                                         <option value="{{$site['id']}}"
                                                                 @if($device['siteid'] == $site['id'])
@@ -237,7 +247,9 @@
                                             <td>
                                                 <select name="{{$device['id'] . '_locationid'}}"
                                                         id="{{$device['id'] . '_locationid'}}"
-                                                        class="form-control">
+                                                        class="form-control"
+                                                        size="1"
+                                                        style="width:auto; font-size: 8pt">
                                                     @foreach($locations as $location)
                                                         <option value="{{$location['id']}}"
                                                                 @if($device['siteid'] == $location['id'])
@@ -253,14 +265,16 @@
                                             <td>
                                                 <select name="{{$device['id'] . '_masterid'}}"
                                                         id="{{$device['id'] . '_masterid'}}"
-                                                        class="form-control">
+                                                        class="form-control"
+                                                        size="1"
+                                                        style="width:auto; font-size: 8pt">
                                                     @foreach($devices as $masterdevice)
                                                         <option value="{{$masterdevice['id']}}"
                                                                 @if($device['masterid'] == $masterdevice['id'])
                                                                 selected="selected"
+                                                                @endif
                                                         >
-                                                            {{$masterdevice['id']}}
-                                                            @endif
+                                                            {{$masterdevice['name']}}
                                                         </option>
                                                     @endforeach
                                                 </select>
@@ -269,7 +283,9 @@
                                             <td>
                                                 <select name="{{$device['id'] . '_devicetypeid'}}"
                                                         id="{{$device['id'] . '_devicetypeid'}}"
-                                                        class="form-control">
+                                                        class="form-control"
+                                                        size="1"
+                                                        style="width:auto; font-size: 8pt">
                                                     @foreach($devicetypes as $devicetype)
                                                         <option value="{{$devicetype['id']}}"
                                                                 @if($device['devicetypeid'] == $devicetype['id'])
@@ -297,7 +313,9 @@
                                             <td>
                                                 <select name="{{$device['id'] . '_mqttserver'}}"
                                                         id="{{$device['id'] . '_mqttserver'}}"
-                                                        class="form-control">
+                                                        class="form-control"                                                        
+                                                        size="1"
+                                                        style="width:auto; font-size: 8pt">
                                                     @foreach($mqttservers as $mqttserver)
                                                         <option value="{{$mqttserver['id']}}"
                                                                 @if($device['mqttserver'] == $mqttserver['id'])
@@ -346,24 +364,22 @@
                                                        size="16">
                                             </td>
 
-                                            <td><input name="{{$device['id'] . '_logontime'}}"
-                                                       id="{{$device['id'] . '_logontime'}}"
-                                                       type="date"
-                                                       value="{{($device->logontime == null) ? '' : date('Y-m-d', strtotime($device->logontime))}}"
-                                                       size="5">
-                                            </td>
-
                                             <td><input name="{{$device['id'] . '_hostname'}}"
                                                        id="{{$device['id'] . '_hostname'}}"
                                                        value="{{$device->hostname}}"
                                                        size="10">
                                             </td>
 
+                                            <td><input name="{{$device['id'] . '_logontime'}}"
+                                                       id="{{$device['id'] . '_logontime'}}"
+                                                       value="{{($device->logontime == null) ? '' : date('Y-m-d', strtotime($device->logontime))}}"
+                                                       size="15">
+                                            </td>
+
                                             <td><input name="{{$device['id'] . '_registertime'}}"
-                                                       id="{{$device['id'] . '_registertime'}}"
-                                                       type="date"
+                                                       id="{{$device['id'] . '_registertime'}}"                                                       
                                                        value="{{($device->registertime == null) ? '' : date('Y-m-d', strtotime($device->registertime))}}"
-                                                       size="5">
+                                                       size="15">
                                             </td>
 
                                             <td>

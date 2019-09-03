@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="loading" style="display:none;" class="">
-        <div style="width: 100px; height: 100px; position: absolute; top:0; bottom: 0; left: 0; right: 0; margin: auto;">
+        <div style="width: 100px; height: 100px; position: absolute; top:0; bottom: 0; left: 0; right: 0; margin: auto; font-size: 8pt">
             <div class="row justify-content-center">
                 <div class="text-white">LOADING</div>
             </div>
@@ -15,7 +15,7 @@
     <input id="tempCount" type="hidden" value="0">
 
     <div id="main">
-        <div class="container">
+        <div class="container" style="font-size: 8pt">
             <div class="row justify-content-center">
                 <div class="col-md-12">
 
@@ -47,7 +47,9 @@
                                         <td>
                                             <select name="{{'deviceid'}}"
                                                     id="{{'deviceid'}}"
-                                                    class="form-control">
+                                                    class="form-control"
+                                                    size="5"
+                                                    style="width:auto; font-size: 8pt">
                                                 @foreach($devices as $device)
                                                     <option value="{{$device['id']}}">
                                                         {{$device['name']}}
@@ -58,7 +60,9 @@
                                         <td>
                                             <select name="{{'sensortype'}}"
                                                     id="{{'sensortype'}}"
-                                                    class="form-control">
+                                                    class="form-control"
+                                                    size="5"
+                                                    style="width:auto; font-size: 8pt">
                                                 @foreach($sensortypes as $sensortype)
                                                     <option value="{{$sensortype['id']}}">
                                                         {{$sensortype['sensorname']}}
@@ -69,7 +73,9 @@
                                         <td>
                                             <select name="{{'locationid'}}"
                                                     id="{{'locationid'}}"
-                                                    class="form-control">
+                                                    class="form-control"
+                                                    size="5"
+                                                    style="width:auto; font-size: 8pt">
                                                 @foreach($locations as $location)
                                                     <option value="{{$location['id']}}">
                                                         {{$location['name']}}
@@ -80,7 +86,9 @@
                                         <td>
                                             <select name="{{'pin'}}"
                                                     id="{{'pin'}}"
-                                                    class="form-control">
+                                                    class="form-control"
+                                                    size="5"
+                                                    style="width:auto; font-size: 8pt">
                                                 @foreach($pinlayouts as $pinlayout)
                                                     <option value="{{$pinlayout['id']}}">
                                                         {{$pinlayout['id']}}
@@ -165,7 +173,9 @@
                                             <td>
                                                 <select name="{{$sensor->id . '_deviceid'}}"
                                                         id="{{$sensor->id . '_deviceid'}}"
-                                                        class="form-control">
+                                                        class="form-control"
+                                                        size="1"
+                                                        style="width:auto; font-size: 8pt">
                                                     @foreach($devices as $device)
                                                         <option value="{{$device['id']}}"
                                                                 @if($sensor['deviceid'] == $device['id'])
@@ -180,7 +190,9 @@
                                             <td>
                                                 <select name="{{$sensor->id . '_sensortype'}}"
                                                         id="{{$sensor->id . '_sensortype'}}"
-                                                        class="form-control">
+                                                        class="form-control"
+                                                        size="1"
+                                                        style="width:auto; font-size: 8pt">
                                                     @foreach($sensortypes as $sensortype)
                                                         <option value="{{$sensortype['id']}}"
                                                                 @if($sensor['sensortype'] == $sensortype['id'])
@@ -195,7 +207,9 @@
                                             <td>
                                                 <select name="{{$sensor->id . '_locationid'}}"
                                                         id="{{$sensor->id . '_locationid'}}"
-                                                        class="form-control">
+                                                        class="form-control"
+                                                        size="1"
+                                                        style="width:auto; font-size: 8pt">
                                                     @foreach($locations as $location)
                                                         <option value="{{$location['id']}}"
                                                                 @if($sensor['locationid'] == $location['id'])
@@ -210,7 +224,9 @@
                                             <td>
                                                 <select name="{{$sensor->id . '_pin'}}"
                                                         id="{{$sensor->id . '_pin'}}"
-                                                        class="form-control">
+                                                        class="form-control"
+                                                        size="1"
+                                                        style="width:auto; font-size: 8pt">
                                                     @foreach($pinlayouts as $pinlayout)
                                                         <option value="{{$pinlayout['id']}}"
                                                                 @if($sensor['pin'] == $pinlayout['id'])
